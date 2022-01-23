@@ -1,0 +1,37 @@
+{
+  "name": "gql-pg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Saurabh Khatri <saurabhk@chegg.com>",
+  "license": "MIT",
+  "workspaces": [
+    "service-a",
+    "service-b",
+    "gateway-service"
+  ],
+  "private": true,
+  "scripts": {
+    "start:service-a": "yarn workspace service-a start",
+    "start:service-b": "yarn workspace service-b start",
+    "start:gateway-service": "yarn workspace gateway-service start",
+    "start": "yarn workspaces foreach -p -v -i run start",
+    "build": "tsc --build tsconfig.json --watch",
+    "start:dev": "concurrently \"yarn build\" \"yarn start\"",
+    "clean:service-a": "yarn workspace service-a clean",
+    "clean:service-b": "yarn workspace service-b clean",
+    "clean:gateway": "yarn workspace gateway-service clean",
+    "clean": "yarn clean:gateway && yarn clean:service-a && yarn clean:service-b"
+  },
+  "dependencies": {
+    "@apollo/gateway": "^0.45.1",
+    "@apollo/subgraph": "^0.1.5",
+    "apollo-server": "^3.6.0",
+    "graphql": "^16.2.0"
+  },
+  "devDependencies": {
+    "apollo-server-types": "^3.5.0",
+    "concurrently": "7.0.0",
+    "nodemon": "2.0.15",
+    "typescript": "^4.5.4"
+  }
+}
