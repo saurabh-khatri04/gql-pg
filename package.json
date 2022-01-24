@@ -26,7 +26,7 @@
     "@apollo/gateway": "^0.45.1",
     "@apollo/subgraph": "^0.1.5",
     "apollo-server": "^3.6.0",
-    "graphql": "^16.2.0"
+    "graphql": "^15.8.0"
   },
   "devDependencies": {
     "apollo-server-types": "^3.5.0",
