@@ -1,0 +1,9 @@
+{
+    "name": "service-a",
+    "private": true,
+    "version": "1.0.0",
+    "scripts": {
+        "start": "nodemon dist/index.js",
+        "clean": "rm -rf dist"
+    }
+}
